@@ -1,20 +1,7 @@
-# statamic3-nuxt-frontend
+# Statamic GraphQL Nuxt.js
 
-## Build Setup
+**⚠️ Work in progress**
 
-```bash
-# install dependencies
-$ npm install
+Example of a Nuxt.js site powered by Statamic 3 using GraphQL.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+> The same site is available for [Next.js](https://github.com/jasonvarga/statamic-graphql-next) for users that prefer React.
