@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { request, gql } from "graphql-request";
+import { gql } from "graphql-request";
+import { graphql } from "../util/statamic";
 
 export default {
   data() {
@@ -33,7 +34,7 @@ export default {
       }
     `;
 
-    const response = await request("http://statamic3.test/graphql", query);
+    const response = await graphql(query);
 
     this.articles = response.entries.data;
   },

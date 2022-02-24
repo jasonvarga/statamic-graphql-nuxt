@@ -6,11 +6,12 @@
 </template>
 
 <script>
-import { request, gql } from "graphql-request";
+import { gql } from "graphql-request";
+import { graphql } from "@/util/statamic";
 
 export default {
-  async asyncData({ params }) {
-    const query = gql`
+  async asyncData({ params, query, $preview }) {
+    const gqlQuery = gql`
       query Entry($slug: String) {
         entry(collection: "articles", slug: $slug) {
           title
@@ -21,9 +22,7 @@ export default {
       }
     `;
 
-    const response = await request("http://statamic3.test/graphql", query, {
-      slug: params.slug,
-    });
+    const response = await graphql(gqlQuery, { slug: params.slug });
     const entry = response.entry;
 
     if (!entry) {
