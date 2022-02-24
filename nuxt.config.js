@@ -1,3 +1,5 @@
+const { resolve } = require('path')
+
 export default {
   target: "static",
 
@@ -34,7 +36,11 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend (config) {
+      config.resolve.alias['@'] = resolve('.')
+    }
+  },
 
   tailwindcss: {
     config: {
