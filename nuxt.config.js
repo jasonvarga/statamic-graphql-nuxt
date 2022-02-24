@@ -38,6 +38,7 @@ export default {
 
   tailwindcss: {
     config: {
+      jit: true,
       plugins: [require("@tailwindcss/typography")],
     },
   },
